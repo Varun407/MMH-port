@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PlaySquare, Film, Video, Gamepad2, Mic, Sparkles } from 'lucide-react';
+import { Film, Mic, Box, MonitorPlay, UserSquare, Video, PlaySquare } from 'lucide-react';
 
 const Services = () => {
   const containerVariants = {
@@ -17,11 +17,12 @@ const Services = () => {
   };
 
   const specificServices = [
-    { icon: <Video className="mb-4" size={32} color="#60a5fa" />, title: 'Viral Motion Videos', outcome: 'Maximize attention & retention' },
-    { icon: <Film className="mb-4" size={32} color="#60a5fa" />, title: 'VSL (Video Sales Letters)', outcome: 'High conversion at scale' },
-    { icon: <Gamepad2 className="mb-4" size={32} color="#60a5fa" />, title: '3D Motion Content', outcome: 'Immersive premium visuals' },
-    { icon: <Mic className="mb-4" size={32} color="#60a5fa" />, title: 'Podcast Editing', outcome: 'Clean, engaging long-form' },
-    { icon: <Sparkles className="mb-4" size={32} color="#60a5fa" />, title: 'Intros & Outros', outcome: 'Strong brand identity hooks' },
+    { icon: <Box className="mb-4" size={32} color="#60a5fa" />, title: 'Viral 3D Motion Graphics', outcome: 'Immersive premium visuals' },
+    { icon: <Film className="mb-4" size={32} color="#60a5fa" />, title: 'VSL', outcome: 'High conversion at scale' },
+    { icon: <Mic className="mb-4" size={32} color="#60a5fa" />, title: 'Podcast', outcome: 'Clean, engaging long-form' },
+    { icon: <MonitorPlay className="mb-4" size={32} color="#60a5fa" />, title: 'SAAS Animation', outcome: 'Product walkthroughs & UI motion' },
+    { icon: <UserSquare className="mb-4" size={32} color="#60a5fa" />, title: 'Viral Real Estate Talking Head', outcome: 'Authority building for agents' },
+    { icon: <Video className="mb-4" size={32} color="#60a5fa" />, title: 'Documentary', outcome: 'Deep storytelling & retention' },
   ];
 
   return (
