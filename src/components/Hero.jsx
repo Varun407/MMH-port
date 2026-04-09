@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="glow orb-2"></div>
         <div className="glow orb-3"></div>
       </div>
-      <div className="noise-overlay"></div>
+
       <div className="vignette"></div>
 
       <section className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative', paddingTop: '2rem' }}>
@@ -48,7 +48,7 @@ const Hero = () => {
                 className="nav-box"
               >
                 <div className="nav-box-inner" style={{ alignItems: 'center' }}>
-                  <img src="profile.png" alt="Profile" style={{ width: '42px', height: '42px', borderRadius: '50%', objectFit: 'cover', marginRight: '1.5rem', border: 'none' }} />
+                  <img src="profile.png" alt="Profile" style={{ width: '42px', height: '42px', borderRadius: '50%', objectFit: 'cover', marginRight: '1.5rem', marginLeft: '-0.75rem', border: 'none' }} />
                   <a href="#home" className="nav-link">Home</a>
                   <a href="#work" className="nav-link">Work</a>
                   <a href="#services" className="nav-link">Services</a>
@@ -79,21 +79,21 @@ const Hero = () => {
                 style={{ padding: '0.5rem 2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.05)', display: 'inline-flex', width: 'fit-content', margin: '0 auto 0.5rem auto' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <div style={{ animation: 'blinkGlow 4s infinite 0s', animationFillMode: 'both' }}>
+                  <div style={{ animation: 'blinkGlow 4s infinite 0s', animationFillMode: 'both', display: 'flex', alignItems: 'center' }}>
                     <Target size={20} color="#f8fafc" />
                   </div>
                   <span style={{ fontWeight: 600, color: '#f8fafc' }}>Attention</span>
                 </div>
                 <span className="text-muted text-gradient-primary">→</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <div style={{ animation: 'blinkGlow 4s infinite 1s', animationFillMode: 'both' }}>
+                  <div style={{ animation: 'blinkGlow 4s infinite 1s', animationFillMode: 'both', display: 'flex', alignItems: 'center' }}>
                     <Eye size={20} color="#f8fafc" />
                   </div>
                   <span style={{ fontWeight: 600, color: '#f8fafc' }}>Views</span>
                 </div>
                 <span className="text-muted text-gradient-primary">→</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <div style={{ animation: 'blinkGlow 4s infinite 2s', animationFillMode: 'both' }}>
+                  <div style={{ animation: 'blinkGlow 4s infinite 2s', animationFillMode: 'both', display: 'flex', alignItems: 'center' }}>
                     <TrendingUp size={20} color="#60a5fa" />
                   </div>
                   <span style={{ fontWeight: 600, color: '#60a5fa' }}>Revenue</span>
