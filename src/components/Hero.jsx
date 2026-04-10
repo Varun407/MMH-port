@@ -1,9 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Target, Eye, TrendingUp } from 'lucide-react';
+import { Play, Target, Eye, TrendingUp, Smartphone, AtSign, Briefcase, Image as ImageIcon, MonitorPlay, Film } from 'lucide-react';
 
 const Hero = () => {
+  const [isBtnHovered, setIsBtnHovered] = useState(false);
+  const [isWorkBtnHovered, setIsWorkBtnHovered] = useState(false);
   const navRef = useRef(null);
+  const btnRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -13,6 +16,14 @@ const Hero = () => {
       const y = e.clientY - rect.top;
       navRef.current.style.setProperty('--mouse-x', `${x}px`);
       navRef.current.style.setProperty('--mouse-y', `${y}px`);
+
+      if (btnRef.current) {
+        const btnRect = btnRef.current.getBoundingClientRect();
+        const btnX = e.clientX - btnRect.left;
+        const btnY = e.clientY - btnRect.top;
+        btnRef.current.style.setProperty('--mouse-x', `${btnX}px`);
+        btnRef.current.style.setProperty('--mouse-y', `${btnY}px`);
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -29,38 +40,36 @@ const Hero = () => {
 
       <div className="vignette"></div>
 
-      <section className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative', paddingTop: '2rem' }}>
+      <section id="home" className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative', paddingTop: '2rem' }}>
         <div className="container" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <header style={{ position: 'absolute', top: '2rem', left: 0, right: 0, padding: '0 1rem', display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', zIndex: 50, width: '100%' }}>
+          <header style={{ position: 'absolute', top: '2rem', left: 0, right: 0, padding: '0 2.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 50, width: '100%' }}>
             {/* Logo Section */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', paddingLeft: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
               <img src="logo.png" alt="(Logo)" style={{ height: '80px', objectFit: 'contain' }} />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <span style={{ fontWeight: 900, fontSize: '2.2rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '-0.04em', lineHeight: 1, color: '#ffffff', textShadow: '0 0 12px rgba(255,255,255,0.4)' }}>MMH</span>
                 <span style={{ fontWeight: 600, fontSize: '1rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '0.4em', textTransform: 'uppercase', lineHeight: 1, marginTop: '5px', background: 'linear-gradient(to right, #60a5fa, #2c2b9e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>GALAXY</span>
               </div>
             </div>
-
-            {/* Centered Navigation Tabs */}
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <nav
-                ref={navRef}
-                className="nav-box"
-              >
-                <div className="nav-box-inner" style={{ alignItems: 'center' }}>
-                  <img src="profile.png" alt="Profile" style={{ width: '42px', height: '42px', borderRadius: '50%', objectFit: 'cover', marginRight: '1.5rem', marginLeft: '-0.75rem', border: 'none' }} />
-                  <a href="#home" className="nav-link">Home</a>
-                  <a href="#work" className="nav-link">Work</a>
-                  <a href="#services" className="nav-link">Services</a>
-                  <a href="#testimonials" className="nav-link">Testimonial</a>
-                  <a href="#faqs" className="nav-link">FAQs</a>
-                </div>
-              </nav>
-            </div>
-
-            {/* Empty right column to keep navigation perfectly centered using CSS Grid */}
-            <div></div>
           </header>
+
+          {/* Centered Navigation Tabs Fixed at Top */}
+          <div style={{ position: 'fixed', top: '1.5rem', left: '50%', transform: 'translateX(-50%)', zIndex: 1000, display: 'flex', justifyContent: 'center' }}>
+            <nav
+              ref={navRef}
+              className="nav-box"
+              style={{ background: 'rgba(5, 5, 5, 0.7)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
+            >
+              <div className="nav-box-inner" style={{ alignItems: 'center' }}>
+                <img src="profile.png" alt="Profile" style={{ width: '42px', height: '42px', borderRadius: '50%', objectFit: 'cover', marginRight: '1.5rem', marginLeft: '-0.75rem', border: 'none' }} />
+                <a href="#home" className="nav-link">Home</a>
+                <a href="#work" className="nav-link">Work</a>
+                <a href="#services" className="nav-link">Services</a>
+                <a href="#testimonials" className="nav-link">Testimonial</a>
+                <a href="#faq" className="nav-link">FAQs</a>
+              </div>
+            </nav>
+          </div>
 
           <div className="flex-col justify-center items-center text-center" style={{ flex: 1, display: 'flex', marginTop: '10rem' }}>
             <motion.div
@@ -76,7 +85,7 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex items-center justify-center gap-4"
-                style={{ padding: '0.5rem 2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.05)', display: 'inline-flex', width: 'fit-content', margin: '0 auto 0.5rem auto' }}
+                style={{ padding: '0.5rem 2rem', background: '#000000', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.05)', display: 'inline-flex', width: 'fit-content', margin: '0 auto 0.5rem auto' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                   <div style={{ animation: 'blinkGlow 4s infinite 0s', animationFillMode: 'both', display: 'flex', alignItems: 'center' }}>
@@ -125,10 +134,94 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}
+              style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', marginTop: '1rem' }}
             >
-              <a href="#work" className="btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1.2rem' }}>View my work</a>
-              <a href="#contact" className="btn-secondary" style={{ padding: '1.2rem 3rem', fontSize: '1.2rem' }}>Let's work together</a>
+              <a 
+                href="#work" 
+                onMouseEnter={() => setIsBtnHovered(true)}
+                onMouseLeave={() => setIsBtnHovered(false)}
+                style={{ 
+                  padding: '1.2rem 3rem', 
+                  fontSize: '1.2rem', 
+                  position: 'relative', 
+                  background: '#000000', 
+                  color: '#ffffff',
+                  borderRadius: '100px',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  overflow: 'hidden',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 1,
+                  boxShadow: isBtnHovered ? '0 0 25px rgba(96, 165, 250, 0.6)' : 'none',
+                  transform: isBtnHovered ? 'translateY(-2px)' : 'none',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <span style={{ position: 'relative', zIndex: 1, textShadow: isBtnHovered ? '0 0 10px rgba(255,255,255,0.5)' : 'none', transition: 'text-shadow 0.3s' }}>View my work</span>
+                {/* Protective base cap */}
+                <div style={{ position: 'absolute', inset: '2px', background: '#000000', borderRadius: '100px', zIndex: 0 }}></div>
+                {/* Infinitely rotating glowing rim */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: isBtnHovered ? 1.5 : 4, ease: "linear" }}
+                  style={{
+                    position: 'absolute',
+                    width: '150%',
+                    height: '500%',
+                    background: isBtnHovered 
+                      ? 'conic-gradient(from 0deg, rgba(96,165,250,0) 20%, #3b82f6 50%, #9333ea 60%, rgba(96,165,250,0) 80%)' 
+                      : 'conic-gradient(from 0deg, rgba(59,130,246,0) 60%, #60a5fa 90%, rgba(59,130,246,0) 100%)',
+                    zIndex: -1,
+                    top: '-200%',
+                    left: '-25%'
+                  }}
+                />
+              </a>
+              <div className="btn-spectacular-wrapper" style={{ position: 'relative', display: 'inline-block' }}
+                onMouseEnter={() => setIsWorkBtnHovered(true)}
+                onMouseLeave={() => setIsWorkBtnHovered(false)}
+              >
+                {/* Dynamically tracking bleeding reflection of the spinning boundaries */}
+                <div style={{
+                  position: 'absolute',
+                  inset: '-6px',
+                  borderRadius: '100px',
+                  zIndex: 0,
+                  filter: isWorkBtnHovered ? 'blur(35px)' : 'blur(20px)',
+                  overflow: 'hidden',
+                  transition: 'all 0.4s ease',
+                  opacity: isWorkBtnHovered ? 1 : 0.6
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    width: '250%',
+                    height: '600%',
+                    top: '-250%',
+                    left: '-75%',
+                    background: isWorkBtnHovered 
+                      ? 'conic-gradient(from 0deg, transparent 20%, #ec4899 40%, #3b82f6 50%, #8b5cf6 60%, transparent 80%)'
+                      : 'conic-gradient(from 0deg, transparent 40%, #ec4899 50%, transparent 60%)',
+                    animation: `borderSpin ${isWorkBtnHovered ? '1.5s' : '5s'} linear infinite`,
+                  }}></div>
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: isWorkBtnHovered 
+                      ? 'linear-gradient(90deg, #ec4899, #8b5cf6, #38bdf8, #ec4899)'
+                      : 'linear-gradient(90deg, #38bdf8, #8b5cf6, #38bdf8, #ec4899, #38bdf8)',
+                    backgroundSize: '300% 100%',
+                    animation: `borderDance ${isWorkBtnHovered ? '2s' : '6s'} linear infinite`,
+                    opacity: 0.8
+                  }}></div>
+                </div>
+
+                <a href="#contact" className="btn-spectacular">
+                  <div className="btn-spectacular-cap"></div>
+                  <span className="btn-spectacular-text">Let's work together</span>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -136,21 +229,21 @@ const Hero = () => {
         {/* Marquee Section */}
         <div className="marquee-container">
           <div className="marquee-content">
-            <span className="marquee-item">Long Form</span>
-            <span className="marquee-item">Short Form</span>
-            <span className="marquee-item">Reels</span>
-            <span className="marquee-item">X (Twitter)</span>
-            <span className="marquee-item">LinkedIn</span>
-            <span className="marquee-item">Meta Ads</span>
-            <span className="marquee-item">Thumbnails</span>
+            <span className="marquee-item"><Play size={18} /> Long Form</span>
+            <span className="marquee-item"><Eye size={18} /> Short Form</span>
+            <span className="marquee-item"><Smartphone size={18} /> Reels</span>
+            <span className="marquee-item"><AtSign size={18} /> X (Twitter)</span>
+            <span className="marquee-item"><Briefcase size={18} /> LinkedIn</span>
+            <span className="marquee-item"><Target size={18} /> Meta Ads</span>
+            <span className="marquee-item"><ImageIcon size={18} /> Thumbnails</span>
             {/* Duplicate to make loop seamless */}
-            <span className="marquee-item">Long Form</span>
-            <span className="marquee-item">Short Form</span>
-            <span className="marquee-item">Reels</span>
-            <span className="marquee-item">X (Twitter)</span>
-            <span className="marquee-item">LinkedIn</span>
-            <span className="marquee-item">Meta Ads</span>
-            <span className="marquee-item">Thumbnails</span>
+            <span className="marquee-item"><Play size={18} /> Long Form</span>
+            <span className="marquee-item"><Eye size={18} /> Short Form</span>
+            <span className="marquee-item"><Smartphone size={18} /> Reels</span>
+            <span className="marquee-item"><AtSign size={18} /> X (Twitter)</span>
+            <span className="marquee-item"><Briefcase size={18} /> LinkedIn</span>
+            <span className="marquee-item"><Target size={18} /> Meta Ads</span>
+            <span className="marquee-item"><ImageIcon size={18} /> Thumbnails</span>
           </div>
         </div>
       </section>

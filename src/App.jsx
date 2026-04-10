@@ -7,6 +7,7 @@ import Tools from './components/Tools';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
+import MoreServices from './components/MoreServices';
 import CTA from './components/CTA';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Testimonials />
       <FAQ />
+      <MoreServices />
       <CTA />
     </>
   );

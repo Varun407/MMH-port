@@ -11,11 +11,10 @@ const Testimonials = () => {
 
   return (
     <section className="section" id="testimonials" style={{ background: '#0a1020', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-      <div className="container">
-        <h2 className="section-title">Social Proof</h2>
-        <p className="section-subtitle">Real results from top creators and brands.</p>
+      <div className="container" style={{ textAlign: 'center' }}>
+        <h2 className="section-title" style={{ fontSize: '3.2rem', fontWeight: 800, marginBottom: '3rem', background: 'linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>Testimonials</h2>
 
-        <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+        <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', textAlign: 'left' }}>
           {testimonials.map((test, index) => (
             <motion.div 
               key={index}

@@ -123,7 +123,8 @@ body {
   bottom: 0;
   pointer-events: none;
   z-index: -1;
-  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.85) 100%),
+    linear-gradient(180deg, rgba(17, 26, 67, 0.35) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 h1,
@@ -508,11 +509,13 @@ a {
   border-radius: 1rem;
   position: relative;
   display: flex;
-  background: rgba(15, 23, 42, 0.3);
+  background: #000000;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
-  padding: 0.2rem 0;
+  padding: 0.8rem 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .marquee-content {
@@ -546,7 +549,7 @@ a {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
   color: var(--text-muted);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
@@ -568,3 +571,115 @@ a {
     transform: translateX(-50%);
   }
 }
+
+@keyframes slowPulse {
+  0% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.4), inset 0 0 20px rgba(139, 92, 246, 0.2); }
+  100% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1); }
+}
+
+@keyframes borderDance {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-spectacular {
+  position: relative;
+  padding: 1.2rem 3.5rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 100px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(10, 15, 30, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes borderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-spectacular::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -2;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #38bdf8, #8b5cf6, #38bdf8, #ec4899, #38bdf8);
+  background-size: 300% 100%;
+  animation: borderDance 6s linear infinite;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+/* New combinational border effect that spins globally around the button perimeter */
+.btn-spectacular::after {
+  content: '';
+  position: absolute;
+  width: 250%;
+  height: 600%;
+  z-index: -3;
+  background: conic-gradient(from 0deg, transparent 40%, #ec4899 50%, transparent 60%);
+  animation: borderSpin 5s linear infinite;
+  opacity: 0.8;
+}
+
+.btn-spectacular:hover {
+  transform: translateY(-2px);
+}
+
+.btn-spectacular:hover::before {
+  opacity: 1;
+  animation: borderDance 2s linear infinite;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6, #38bdf8, #ec4899);
+  background-size: 300% 100%;
+}
+
+/* Speed up the spinning combo border effect deeply */
+.btn-spectacular:hover::after {
+  background: conic-gradient(from 0deg, transparent 20%, #ec4899 40%, #3b82f6 50%, #8b5cf6 60%, transparent 80%);
+  animation: borderSpin 1.5s linear infinite;
+}
+
+/* An explicit center cap to hide the inner sweeping bounds so the ring forms cleanly */
+.btn-spectacular-cap {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  z-index: -1;
+  border-radius: 100px;
+  background: linear-gradient(45deg, rgba(10,15,30,0.9), rgba(15,23,42,0.8));
+  transition: all 0.4s ease;
+}
+
+.btn-spectacular:hover .btn-spectacular-cap {
+  background: linear-gradient(45deg, rgba(139, 92, 246, 0.4), rgba(59, 130, 246, 0.4));
+}
+
+.btn-spectacular-text {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to right, #ffffff, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.btn-spectacular:hover .btn-spectacular-text {
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255,255,255,1);
+}
+
