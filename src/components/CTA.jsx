@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, ExternalLink } from 'lucide-react';
+import { Mail, Calendar, ExternalLink, ArrowRight } from 'lucide-react';
 
-// Custom SVG Icons
+// Custom SVG Icons to avoid Lucide-react version compatibility issues
 const InstagramIcon = ({ size = 24, color = 'currentColor' }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -26,53 +26,38 @@ const LinkedinIcon = ({ size = 24, color = 'currentColor' }) => (
 );
 
 const CTA = () => {
-  useEffect(() => {
-    // Load Calendly Script
-    const script = document.createElement('script');
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script if component unmounts
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
   const socialLinks = [
-    { 
-      name: 'Instagram', 
-      handle: '@MMHgalaxy', 
-      icon: <InstagramIcon size={24} />, 
-      color: '#E4405F', 
+    {
+      name: 'Instagram',
+      handle: '@MMHgalaxy',
+      icon: <InstagramIcon size={28} />,
+      color: '#E4405F',
       link: '#',
-      desc: 'Behind the scenes'
+      desc: 'Follow for BTS and daily motion tips.'
     },
-    { 
-      name: 'Twitter (X)', 
-      handle: '@Mohammad__m_m_h', 
-      icon: <TwitterIcon size={24} />, 
-      color: '#1DA1F2', 
+    {
+      name: 'Twitter (X)',
+      handle: '@Mohammad__m_m_h',
+      icon: <TwitterIcon size={28} />,
+      color: '#1DA1F2',
       link: 'https://x.com/Mohammad__m_m_h',
-      desc: 'Industry news'
+      desc: 'Get the latest industry news and thoughts.'
     },
-    { 
-      name: 'LinkedIn', 
-      handle: 'mohammadmmh', 
-      icon: <LinkedinIcon size={24} />, 
-      color: '#0A66C2', 
+    {
+      name: 'LinkedIn',
+      handle: 'mohammadmmh',
+      icon: <LinkedinIcon size={28} />,
+      color: '#0A66C2',
       link: 'https://www.linkedin.com/in/mohammadmmh',
-      desc: 'Networking'
+      desc: 'Connect for professional networking.'
     },
-    { 
-      name: 'Email', 
-      handle: 'hello@mmhgalaxy.com', 
-      icon: <Mail size={24} />, 
-      color: '#4444f4', 
+    {
+      name: 'Email',
+      handle: 'hello@mmhgalaxy.com',
+      icon: <Mail size={28} />,
+      color: '#4444f4',
       link: 'mailto:hello@mmhgalaxy.com',
-      desc: 'Direct Inquiries'
+      desc: 'For direct project inquiries and business.'
     }
   ];
 
@@ -83,82 +68,106 @@ const CTA = () => {
 
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 className="section-title">Let's Work Together</h2>
-          <p className="section-subtitle">Choose a time for a strategy call or reach out via socials.</p>
+          <h2 className="section-title" style={{ fontSize: '3.5rem', lineHeight: 1.1, fontWeight: 900 }}>
+            STOP THE SCROLL.<br />
+            <span className="italic text-primary" style={{ fontSize: '3rem' }}>START THE CONVERSION.</span>
+          </h2>
+          <p className="section-subtitle" style={{ fontSize: '1.25rem', marginTop: '1.5rem', color: '#cbd5e1' }}>
+            Ready to transform your brand? Let's build your high-performance content engine today.
+          </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-          {/* Calendly Inline Widget Container */}
+        <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          {/* Scheduling Card - Featured */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            style={{ 
-              width: '100%',
-              maxWidth: '1000px',
-              margin: '0 auto',
-              background: 'rgba(10, 10, 20, 0.4)',
+            transition={{ duration: 0.6 }}
+            style={{
+              gridColumn: 'auto / span 2',
+              background: 'linear-gradient(145deg, rgba(20, 20, 40, 0.8), rgba(68, 68, 244, 0.1))',
               borderRadius: '2rem',
-              border: '1px solid rgba(255, 255, 255, 0.05)',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+              padding: '3rem',
+              border: '1px solid rgba(68, 68, 244, 0.2)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+              position: 'relative',
+              overflow: 'hidden'
             }}
+            className="md:col-span-2"
           >
-            <div 
-              className="calendly-inline-widget" 
-              data-url="https://calendly.com/mohammadmmh" 
-              style={{ minWidth: '320px', height: '700px' }}
-            ></div>
+            <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(68, 68, 244, 0.15) 0%, transparent 70%)' }}></div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ background: 'rgba(68, 68, 244, 0.1)', padding: '1rem', borderRadius: '1rem', color: '#4444f4' }}>
+                <Calendar size={32} />
+              </div>
+              <h3 style={{ fontSize: '2rem', margin: 0, fontWeight: 700, color: '#f8fafc' }}>Schedule via Calendly</h3>
+            </div>
+
+            <p style={{ fontSize: '1.2rem', color: '#94a3b8', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '600px' }}>
+              Book a direct strategy consultation to discuss how we can scale your views and revenue through world-class motion systems.
+            </p>
+
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <a href="#" className="btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1.1rem', background: '#4444f4', display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+                <span>Open Calendly</span>
+                <ArrowRight size={20} />
+              </a>
+            </div>
           </motion.div>
 
-          {/* Simplified Social Grid */}
-          <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', maxWidth: '1000px', margin: '0 auto', width: '100%' }}>
-            {socialLinks.map((social, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+          {/* Social Grid items */}
+          {socialLinks.map((social, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <a
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '2.5rem 2rem',
+                  height: '100%',
+                  background: 'rgba(10, 10, 15, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)',
+                  borderRadius: '1.5rem',
+                  transition: 'all 0.3s ease',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = `${social.color}44`;
+                  e.currentTarget.style.background = `linear-gradient(145deg, rgba(10, 10, 15, 0.8), ${social.color}05)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+                  e.currentTarget.style.background = 'rgba(10, 10, 15, 0.6)';
+                }}
               >
-                <a 
-                  href={social.link} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '1rem',
-                    padding: '1.5rem',
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.05)',
-                    borderRadius: '1.25rem',
-                    transition: 'all 0.3s ease',
-                    textDecoration: 'none'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = `${social.color}44`;
-                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)';
-                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
-                  }}
-                >
-                  <div style={{ color: social.color, display: 'flex' }}>
-                    {social.icon}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <h4 style={{ fontSize: '1rem', margin: 0, color: '#f8fafc', fontWeight: 600 }}>{social.name}</h4>
-                    <p style={{ fontSize: '0.8rem', color: '#64748b', margin: 0 }}>{social.handle}</p>
-                  </div>
-                  <ExternalLink size={16} style={{ opacity: 0.3, color: '#f8fafc' }} />
-                </a>
-              </motion.div>
-            ))}
-          </div>
+                <div style={{ color: social.color, marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  {social.icon}
+                  <ExternalLink size={18} style={{ opacity: 0.4 }} />
+                </div>
+
+                <h4 style={{ fontSize: '1.4rem', marginBottom: '0.25rem', color: '#f8fafc', fontWeight: 700 }}>{social.name}</h4>
+                <p style={{ fontSize: '0.9rem', color: social.color, opacity: 0.8, marginBottom: '1rem', fontWeight: 600 }}>{social.handle}</p>
+                <p style={{ fontSize: '0.95rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{social.desc}</p>
+              </a>
+            </motion.div>
+          ))}
         </div>
 
         {/* Footer */}
@@ -168,13 +177,13 @@ const CTA = () => {
               <span style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '-0.02em', color: '#ffffff' }}>MMH</span>
               <span style={{ fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.3em', color: '#4444f4' }}>GALAXY</span>
             </div>
-            
+
             <div className="flex gap-8 text-muted" style={{ fontSize: '0.95rem' }}>
               <a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>Privacy Policy</a>
               <a href="#" style={{ color: '#94a3b8', textDecoration: 'none' }}>Terms of Service</a>
               <a href="#about" style={{ color: '#94a3b8', textDecoration: 'none' }}>About</a>
             </div>
-            
+
             <p style={{ fontSize: '0.9rem', color: '#475569' }}>
               &copy; {new Date().getFullYear()} MMHgalaxy. High-performance video systems.
             </p>
