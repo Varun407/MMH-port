@@ -1,51 +1,161 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Volume2, Scissors, Zap } from 'lucide-react';
+import { Palette, Volume2, Scissors, Zap, Award, Clock, RefreshCw, Send } from 'lucide-react';
 
 const About = () => {
-  const skills = [
-    { icon: <Palette className="mb-4" size={28} color="#60a5fa" />, title: 'Color Grading', text: 'Film-level aesthetic treatment.' },
-    { icon: <Volume2 className="mb-4" size={28} color="#60a5fa" />, title: 'Sound Design', text: 'Immersive audio landscapes.' },
-    { icon: <Scissors className="mb-4" size={28} color="#60a5fa" />, title: 'Smooth Cuts', text: 'Seamless narrative flow.' },
-    { icon: <Zap className="mb-4" size={28} color="#60a5fa" />, title: 'Complex Motion', text: 'High-end kinetic typography & 3D.' },
+  const highlights = [
+    { icon: <Clock size={20} />, title: '3-Day Delivery', text: 'Fast turnaround without compromising quality.' },
+    { icon: <RefreshCw size={20} />, title: '5-10 Revisions', text: 'Satisfaction is the priority.' },
+    { icon: <Award size={20} />, title: 'DaVinci Master', text: 'Mastered workflow within a single powerful tool.' },
   ];
 
   return (
-    <section className="section" id="about">
-      <div className="container flex flex-col items-center">
-        <h2 className="section-title">Motion that moves people.</h2>
-        <p className="section-subtitle">Not just an editor. A strategic partner in your brand's visual identity.</p>
+    <section className="section" id="about" style={{ overflow: 'hidden' }}>
+      <div className="container">
 
-        <div className="card" style={{ maxWidth: '800px', width: '100%', marginBottom: '4rem', display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center' }}>
-          <div style={{ flex: '1 1 300px' }}>
-             <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>About Me</h3>
-             <p className="text-muted" style={{ marginBottom: '1.5rem' }}>
-               I specialize in transforming raw footage into high-retention, high-converting digital assets. Whether it's a 30-second TikTok ad or a 20-minute YouTube documentary, my goal is to maximize audience engagement and drive real revenue.
-             </p>
-             <a href="#contact" className="btn-secondary" style={{ padding: '0.8rem 2rem', fontSize: '1rem' }}>Let's talk vision</a>
-          </div>
-          <div style={{ flex: '1 1 300px', background: 'rgba(0,0,0,0.3)', borderRadius: '1rem', padding: '2rem', border: '1px solid rgba(255,255,255,0.05)' }}>
-             <h4 style={{ marginBottom: '1.5rem', color: '#f8fafc', fontSize: '1.2rem' }}>Core Capabilities</h4>
-             <div className="grid grid-cols-2 gap-4">
-                {skills.map((skill, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '4rem',
+          alignItems: 'center',
+          position: 'relative'
+        }}>
+          {/* Text Content - Left Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                <div style={{ width: '40px', height: '2px', background: '#4444f4' }}></div>
+                <span style={{ color: '#4444f4', fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>About Me</span>
+              </div>
+
+              <h3 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#f8fafc', fontWeight: 800, lineHeight: 1.1 }}>
+                I’m Mohammad. <br />
+                <span className="italic" style={{ color: '#94a3b8', fontSize: '1.8rem' }}>I bring ideas to life.</span>
+              </h3>
+
+              <div style={{ color: '#cbd5e1', fontSize: '1.1rem', lineHeight: 1.8 }}>
+                <p style={{ marginBottom: '1.5rem', fontWeight: 500, color: '#f8fafc', fontSize: '1.2rem' }}>
+                  I’m a professional video editor helping creators and brands turn raw ideas into high-performance visual assets.
+                </p>
+
+                <p style={{ marginBottom: '2rem' }}>
+                  I turn your raw footage into clean, engaging, and scroll-stopping videos for any platform—whether it's YouTube, Instagram, or TikTok. My work isn't just about editing; it's about the <strong>psychology</strong> behind what hooks attention and keeps viewers watching until the very last second.
+                </p>
+
+                <div style={{
+                  background: 'rgba(68, 68, 244, 0.08)',
+                  padding: '2rem',
+                  borderRadius: '1.5rem',
+                  border: '1px solid rgba(68, 68, 244, 0.2)',
+                  marginBottom: '2rem',
+                  position: 'relative'
+                }}>
+                  <div style={{ position: 'absolute', top: '-10px', left: '20px', background: '#0a1020', padding: '0 10px' }}>
+                    <Award size={20} color="#4444f4" />
+                  </div>
+                  <p style={{ margin: 0 }}>
+                    I have mastered <strong>DaVinci Resolve</strong>—from precision cuts to high-level motion graphics and color grading. By staying within one professional tool, I deliver flexible, world-class results without the friction of switching software.
+                  </p>
+                </div>
+
+                <p style={{ marginBottom: '2.5rem' }}>
+                  Send me your footage and your vision—I’ll handle the rest. Expect delivery in just <strong>3 days</strong> with 5-10 revisions because your absolute satisfaction is my baseline.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', marginTop: '1rem' }}>
+                <a href="#contact" className="btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <span>Let's Work Together</span>
+                  <Send size={18} />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Image - Right Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            style={{ position: 'relative' }}
+          >
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              {/* Image Frame with premium effects */}
+              <div style={{
+                position: 'relative',
+                borderRadius: '0.5rem',
+                overflow: 'hidden',
+                aspectRatio: '1 / 1',
+                maxWidth: '420px',
+                margin: '0 auto',
+                boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                marginTop: '-40px'
+              }}>
+                <img
+                  src="aboutme.png"
+                  alt="Mohammad"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  onError={(e) => { e.target.src = 'profile.png'; }}
+                />
+
+                {/* Overlay Gradient */}
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(10, 16, 32, 0.8) 0%, transparent 40%)'
+                }}></div>
+              </div>
+
+              {/* Floating Value Cards */}
+              <div style={{ position: 'absolute', bottom: '-30px', left: '-30px', right: '-30px', display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', zIndex: 2 }}>
+                {highlights.map((h, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: 0.5 + (i * 0.1) }}
+                    style={{
+                      background: 'rgba(5, 5, 5, 0.8)',
+                      backdropFilter: 'blur(12px)',
+                      padding: '1rem',
+                      borderRadius: '1rem',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      textAlign: 'center',
+                      width: '120px',
+                      boxShadow: '0 10px 25px rgba(0,0,0,0.3)'
+                    }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                      <div style={{ background: 'rgba(96, 165, 250, 0.1)', padding: '0.8rem', borderRadius: '12px' }}>{skill.icon}</div>
-                      <div>
-                        <h5 style={{ fontSize: '1rem', marginBottom: '0.2rem' }}>{skill.title}</h5>
-                        <p style={{ fontSize: '0.8rem', color: '#94a3b8' }}>{skill.text}</p>
-                      </div>
-                    </div>
+                    <div style={{ color: '#4444f4', marginBottom: '0.5rem' }}>{h.icon}</div>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#f8fafc' }}>{h.title}</span>
                   </motion.div>
                 ))}
-             </div>
-          </div>
+              </div>
+
+              {/* Background Glow behind image */}
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '120%',
+                height: '120%',
+                background: 'radial-gradient(circle, rgba(68, 68, 244, 0.1) 0%, transparent 70%)',
+                zIndex: -1
+              }}></div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

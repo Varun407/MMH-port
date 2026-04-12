@@ -4,8 +4,8 @@
   --bg-dark: #0f163a;
   --bg-gradient-start: #111a43;
   --bg-gradient-end: #1d2a60;
-  --primary: #2563eb;
-  --primary-glow: rgba(37, 99, 235, 0.4);
+  --primary: #4444f4;
+  --primary-glow: rgba(68, 68, 244, 0.4);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --card-bg: rgba(15, 23, 42, 0.6);
@@ -102,16 +102,9 @@ body {
 }
 
 /* Texture overlay for premium glassmorphism feel */
+/* Noise overlay removed for a smoother look */
 .noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -2;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  display: none;
 }
 
 /* Edge vignetting to focus attention to center */
@@ -192,6 +185,7 @@ a {
       rgba(96, 165, 250, 0.9),
       transparent 50%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 1;
@@ -420,6 +414,7 @@ a {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
+  color: #ffffff;
 }
 
 .section-subtitle {
@@ -428,6 +423,14 @@ a {
   text-align: center;
   max-width: 600px;
   margin: 0 auto 4rem auto;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-primary {
+  color: #4444f4;
 }
 
 /* Secondary Button */
@@ -513,7 +516,7 @@ a {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
-  padding: 0.8rem 0;
+  padding: 1.5rem 0;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -573,15 +576,31 @@ a {
 }
 
 @keyframes slowPulse {
-  0% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1); }
-  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.4), inset 0 0 20px rgba(139, 92, 246, 0.2); }
-  100% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1); }
+  0% {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4), inset 0 0 20px rgba(139, 92, 246, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2), inset 0 0 10px rgba(56, 189, 248, 0.1);
+  }
 }
 
 @keyframes borderDance {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .btn-spectacular {
@@ -599,13 +618,18 @@ a {
   z-index: 1;
   background: rgba(10, 15, 30, 0.4);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes borderSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .btn-spectacular::before {
@@ -657,7 +681,7 @@ a {
   inset: 4px;
   z-index: -1;
   border-radius: 100px;
-  background: linear-gradient(45deg, rgba(10,15,30,0.9), rgba(15,23,42,0.8));
+  background: linear-gradient(45deg, rgba(10, 15, 30, 0.9), rgba(15, 23, 42, 0.8));
   transition: all 0.4s ease;
 }
 
@@ -670,16 +694,17 @@ a {
   z-index: 1;
   background: linear-gradient(to right, #ffffff, #e2e8f0);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .btn-spectacular:hover .btn-spectacular-text {
   background: linear-gradient(to right, #ffffff, #ffffff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(255,255,255,1);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
 }
-

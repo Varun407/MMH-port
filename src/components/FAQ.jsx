@@ -30,7 +30,7 @@ const QAItem = ({ q, a, index }) => {
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center', 
-          color: isOpen ? '#60a5fa' : '#f8fafc', 
+          color: isOpen ? '#007BFF' : '#f8fafc', 
           fontSize: '1.15rem', 
           fontWeight: 600, 
           textAlign: 'left', 
@@ -39,7 +39,7 @@ const QAItem = ({ q, a, index }) => {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <HelpCircle size={20} color={isOpen ? '#60a5fa' : '#475569'} style={{ transition: 'color 0.3s ease', flexShrink: 0 }} />
+          <HelpCircle size={20} color={isOpen ? '#007BFF' : '#475569'} style={{ transition: 'color 0.3s ease', flexShrink: 0 }} />
           <span>{q}</span>
         </div>
         <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }} style={{ flexShrink: 0 }}>
@@ -82,10 +82,10 @@ const FAQ = () => {
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(96,165,250,0.1)', padding: '0.5rem 1rem', borderRadius: '100px', border: '1px solid rgba(96,165,250,0.2)', marginBottom: '1.5rem', boxShadow: '0 0 15px rgba(96,165,250,0.15)' }}>
              <Sparkles size={16} color="#60a5fa" />
-             <span style={{ color: '#60a5fa', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>FAQ</span>
+             <span style={{ color: '#007BFF', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>FAQ</span>
           </div>
-          <h2 style={{ fontSize: '3.5rem', fontWeight: 800, margin: '0 0 1rem 0', letterSpacing: '-0.02em', lineHeight: 1.2, background: 'linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            Frequently Asked Questions
+          <h2 className="section-title">
+            Frequently Asked <span className="italic text-primary">Questions</span>
           </h2>
           <p className="text-muted" style={{ fontSize: '1.15rem', color: '#cbd5e1', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
             Get answers to the most common questions about our content creation services

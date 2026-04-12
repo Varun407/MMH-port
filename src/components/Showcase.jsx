@@ -67,7 +67,7 @@ const Showcase = () => {
       <div className="container">
         {/* Short Form */}
         <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <h3 style={{ fontSize: '3.2rem', fontWeight: 800, marginBottom: '1rem', background: 'linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Short Form Videos</h3>
+          <h3 className="section-title">Short Form <span className="italic text-primary">Videos</span></h3>
           <p className="text-muted" style={{ fontSize: '1.25rem', maxWidth: '800px', marginBottom: '2rem', textAlign: 'center', color: '#cbd5e1', textShadow: '0 0 20px rgba(96, 165, 250, 0.2)' }}>
             Strategically crafted videos that capture attention instantly and turn it into consistent engagement and reach.
           </p>
@@ -91,7 +91,7 @@ const Showcase = () => {
 
         {/* Long Form */}
         <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '4rem' }}>
-          <h3 style={{ fontSize: '3.2rem', fontWeight: 800, marginBottom: '1rem', background: 'linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Long Form Contents</h3>
+          <h3 className="section-title">Long Form <span className="italic text-primary">Contents</span></h3>
           <p className="text-muted" style={{ fontSize: '1.25rem', maxWidth: '800px', marginBottom: '2rem', textAlign: 'center', color: '#cbd5e1', textShadow: '0 0 20px rgba(96, 165, 250, 0.2)' }}>
             Deep, structured storytelling designed to increase watch time, trust, and long-term audience growth.
           </p>

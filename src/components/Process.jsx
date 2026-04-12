@@ -14,7 +14,7 @@ const Process = () => {
     <section className="section" id="process">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 className="section-title" style={{ fontSize: '3.2rem', fontWeight: '800', marginBottom: '0.5rem', background: 'linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>How it Works</h2>
+          <h2 className="section-title">How it <span className="italic text-primary">Works</span></h2>
         </div>
         
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
@@ -49,7 +49,7 @@ const Process = () => {
                   alignItems: 'center', 
                   justifyContent: 'center',
                   fontWeight: 700,
-                  color: '#60a5fa',
+                  color: '#007BFF',
                   zIndex: 2,
                   flexShrink: 0,
                   boxShadow: '0 0 20px rgba(0,0,0,0.5)'

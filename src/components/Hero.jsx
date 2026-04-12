@@ -48,7 +48,7 @@ const Hero = () => {
               <img src="logo.png" alt="(Logo)" style={{ height: '80px', objectFit: 'contain' }} />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <span style={{ fontWeight: 900, fontSize: '2.2rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '-0.04em', lineHeight: 1, color: '#ffffff', textShadow: '0 0 12px rgba(255,255,255,0.4)' }}>MMH</span>
-                <span style={{ fontWeight: 600, fontSize: '1rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '0.4em', textTransform: 'uppercase', lineHeight: 1, marginTop: '5px', background: 'linear-gradient(to right, #60a5fa, #2c2b9e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>GALAXY</span>
+                <span style={{ fontWeight: 600, fontSize: '1rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '0.4em', textTransform: 'uppercase', lineHeight: 1, marginTop: '5px', color: '#4444f4' }}>GALAXY</span>
               </div>
             </div>
           </header>
@@ -58,7 +58,13 @@ const Hero = () => {
             <nav
               ref={navRef}
               className="nav-box"
-              style={{ background: 'rgba(5, 5, 5, 0.7)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
+              style={{
+                background: 'rgba(5, 5, 5, 0.7)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(68, 68, 244, 0.2)',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                borderTop: '1px solid rgba(68, 68, 244, 0.2)'
+              }}
             >
               <div className="nav-box-inner" style={{ alignItems: 'center' }}>
                 <img src="profile.png" alt="Profile" style={{ width: '42px', height: '42px', borderRadius: '50%', objectFit: 'cover', marginRight: '1.5rem', marginLeft: '-0.75rem', border: 'none' }} />
@@ -103,9 +109,9 @@ const Hero = () => {
                 <span className="text-muted text-gradient-primary">→</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                   <div style={{ animation: 'blinkGlow 4s infinite 2s', animationFillMode: 'both', display: 'flex', alignItems: 'center' }}>
-                    <TrendingUp size={20} color="#60a5fa" />
+                    <TrendingUp size={20} color="#4444f4" />
                   </div>
-                  <span style={{ fontWeight: 600, color: '#60a5fa' }}>Revenue</span>
+                  <span style={{ fontWeight: 600, color: '#4444f4' }}>Revenue</span>
                 </div>
               </motion.div>
 
@@ -116,10 +122,10 @@ const Hero = () => {
                 }}
                 style={{ fontSize: '5rem', marginBottom: '1.5rem', letterSpacing: '-0.02em', color: '#ffffff' }}
               >
-                Turn your <span style={{ color: '#60a5fa' }}>content</span> into real<br />wealth.
+                Turn your <span style={{ color: '#4444f4' }}>content</span> into real<br />wealth.
               </motion.h1>
               <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8 } } }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(96, 165, 250, 0.2)', color: '#60a5fa', flexShrink: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(68, 68, 244, 0.2)', color: '#4444f4', flexShrink: 0 }}>
                   <Play size={20} fill="currentColor" />
                 </div>
                 <p className="text-muted" style={{ fontSize: '1.25rem', maxWidth: '750px', margin: 0, color: '#94a3b8' }}>
@@ -136,15 +142,15 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', marginTop: '1rem' }}
             >
-              <a 
-                href="#work" 
+              <a
+                href="#work"
                 onMouseEnter={() => setIsBtnHovered(true)}
                 onMouseLeave={() => setIsBtnHovered(false)}
-                style={{ 
-                  padding: '1.2rem 3rem', 
-                  fontSize: '1.2rem', 
-                  position: 'relative', 
-                  background: '#000000', 
+                style={{
+                  padding: '1.2rem 3rem',
+                  fontSize: '1.2rem',
+                  position: 'relative',
+                  background: '#000000',
                   color: '#ffffff',
                   borderRadius: '100px',
                   textDecoration: 'none',
@@ -154,7 +160,7 @@ const Hero = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   zIndex: 1,
-                  boxShadow: isBtnHovered ? '0 0 25px rgba(96, 165, 250, 0.6)' : 'none',
+                  boxShadow: isBtnHovered ? '0 0 25px rgba(68, 68, 244, 0.6)' : 'none',
                   transform: isBtnHovered ? 'translateY(-2px)' : 'none',
                   transition: 'all 0.3s ease'
                 }}
@@ -170,56 +176,60 @@ const Hero = () => {
                     position: 'absolute',
                     width: '150%',
                     height: '500%',
-                    background: isBtnHovered 
-                      ? 'conic-gradient(from 0deg, rgba(96,165,250,0) 20%, #3b82f6 50%, #9333ea 60%, rgba(96,165,250,0) 80%)' 
-                      : 'conic-gradient(from 0deg, rgba(59,130,246,0) 60%, #60a5fa 90%, rgba(59,130,246,0) 100%)',
+                    background: isBtnHovered
+                      ? 'conic-gradient(from 0deg, rgba(68, 68, 244, 0) 20%, #4444f4 50%, #9333ea 60%, rgba(68, 68, 244, 0) 80%)'
+                      : 'conic-gradient(from 0deg, rgba(68, 68, 244, 0) 60%, #4444f4 90%, rgba(68, 68, 244, 0) 100%)',
                     zIndex: -1,
                     top: '-200%',
                     left: '-25%'
                   }}
                 />
               </a>
-              <div className="btn-spectacular-wrapper" style={{ position: 'relative', display: 'inline-block' }}
+              <div
+                style={{ position: 'relative', display: 'inline-block' }}
                 onMouseEnter={() => setIsWorkBtnHovered(true)}
                 onMouseLeave={() => setIsWorkBtnHovered(false)}
               >
-                {/* Dynamically tracking bleeding reflection of the spinning boundaries */}
-                <div style={{
-                  position: 'absolute',
-                  inset: '-6px',
-                  borderRadius: '100px',
-                  zIndex: 0,
-                  filter: isWorkBtnHovered ? 'blur(35px)' : 'blur(20px)',
-                  overflow: 'hidden',
-                  transition: 'all 0.4s ease',
-                  opacity: isWorkBtnHovered ? 1 : 0.6
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    width: '250%',
-                    height: '600%',
-                    top: '-250%',
-                    left: '-75%',
-                    background: isWorkBtnHovered 
-                      ? 'conic-gradient(from 0deg, transparent 20%, #ec4899 40%, #3b82f6 50%, #8b5cf6 60%, transparent 80%)'
-                      : 'conic-gradient(from 0deg, transparent 40%, #ec4899 50%, transparent 60%)',
-                    animation: `borderSpin ${isWorkBtnHovered ? '1.5s' : '5s'} linear infinite`,
-                  }}></div>
-                  <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: isWorkBtnHovered 
-                      ? 'linear-gradient(90deg, #ec4899, #8b5cf6, #38bdf8, #ec4899)'
-                      : 'linear-gradient(90deg, #38bdf8, #8b5cf6, #38bdf8, #ec4899, #38bdf8)',
-                    backgroundSize: '300% 100%',
-                    animation: `borderDance ${isWorkBtnHovered ? '2s' : '6s'} linear infinite`,
-                    opacity: 0.8
-                  }}></div>
-                </div>
+                {/* Minimalist purple-to-white neon glow outline */}
+                {isWorkBtnHovered && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    style={{
+                      position: 'absolute',
+                      inset: '-2px',
+                      borderRadius: '100px',
+                      background: 'linear-gradient(90deg, #c084fc, #ffffff, #c084fc)',
+                      zIndex: 0,
+                      filter: 'blur(10px)',
+                      boxShadow: '0 0 20px rgba(68, 68, 244, 0.4), 0 0 40px rgba(255, 255, 255, 0.2)',
+                    }}
+                  >
 
-                <a href="#contact" className="btn-spectacular">
-                  <div className="btn-spectacular-cap"></div>
-                  <span className="btn-spectacular-text">Let's work together</span>
+                    <motion.div
+                      animate={{
+                        opacity: [0.7, 1, 0.7],
+                        scale: [1, 1.02, 1]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      style={{ width: '100%', height: '100%', borderRadius: 'inherit', background: 'inherit' }}
+                    />
+                  </motion.div>
+                )}
+
+                <a
+                  href="#contact"
+                  className="btn-secondary"
+                  style={{
+                    padding: '1.2rem 3.5rem',
+                    fontSize: '1.25rem',
+                    background: '#000000',
+                    position: 'relative',
+                    zIndex: 1,
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}
+                >
+                  Let's Work Together
                 </a>
               </div>
             </motion.div>
