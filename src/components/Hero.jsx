@@ -47,8 +47,8 @@ const Hero = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
               <img src="logo.png" alt="(Logo)" style={{ height: '80px', objectFit: 'contain' }} />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <span style={{ fontWeight: 900, fontSize: '2.2rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '-0.04em', lineHeight: 1, color: '#ffffff', textShadow: '0 0 12px rgba(255,255,255,0.4)' }}>MMH</span>
-                <span style={{ fontWeight: 600, fontSize: '1rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '0.4em', textTransform: 'uppercase', lineHeight: 1, marginTop: '5px', color: '#4444f4' }}>GALAXYY</span>
+                <span style={{ fontWeight: 900, fontSize: '2.3rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '+0.13em', lineHeight: 1, color: '#ffffff', textShadow: '0 0 12px rgba(255,255,255,0.4)' }}>MMH</span>
+                <span style={{ fontWeight: 600, fontSize: '1rem', fontFamily: 'SF Pro Display, sans-serif', letterSpacing: '0.3em', textTransform: 'uppercase', lineHeight: 1, marginTop: '5px', color: '#4444f4' }}>GALAXYY</span>
               </div>
             </div>
           </header>
