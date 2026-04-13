@@ -32,7 +32,7 @@ const CTA = () => {
       handle: '@MMHgalaxy',
       icon: <InstagramIcon size={28} />,
       color: '#E4405F',
-      link: '#',
+      link: 'https://www.instagram.com/m_m_h_galaxyy/',
       desc: 'Follow for BTS and daily motion tips.'
     },
     {
@@ -53,10 +53,10 @@ const CTA = () => {
     },
     {
       name: 'Email',
-      handle: 'hello@mmhgalaxy.com',
+      handle: 'mmhgalaxyy@gmail.com',
       icon: <Mail size={28} />,
       color: '#4444f4',
-      link: 'mailto:hello@mmhgalaxy.com',
+      link: 'mailto:mmhgalaxyy@gmail.com',
       desc: 'For direct project inquiries and business.'
     }
   ];
@@ -69,11 +69,11 @@ const CTA = () => {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 className="section-title" style={{ fontSize: '3.5rem', lineHeight: 1.1, fontWeight: 900 }}>
-            STOP THE SCROLL.<br />
-            <span className="italic text-primary" style={{ fontSize: '3rem' }}>START THE CONVERSION.</span>
+            Strategic Collaboration for<br />
+            <span className="italic text-primary" style={{ fontSize: '3rem' }}>High-Performance Growth.</span>
           </h2>
           <p className="section-subtitle" style={{ fontSize: '1.25rem', marginTop: '1.5rem', color: '#cbd5e1' }}>
-            Ready to transform your brand? Let's build your high-performance content engine today.
+            Transforming your brand's vision into scalable content ecosystems that drive sustainable engagement and measurable results.
           </p>
         </div>
 

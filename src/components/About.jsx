@@ -45,7 +45,7 @@ const About = () => {
                 </p>
 
                 <p style={{ marginBottom: '2rem' }}>
-                  I turn your raw footage into clean, engaging, and scroll-stopping videos for any platform—whether it's YouTube, Instagram, or TikTok. My work isn't just about editing; it's about the <strong>psychology</strong> behind what hooks attention and keeps viewers watching until the very last second.
+                  I turn your raw footage into clean, engaging, and scroll-stopping videos for any platform whether it's YouTube, Instagram, or TikTok. My work isn't just about editing; it's about the <strong>psychology</strong> behind what hooks attention and keeps viewers watching until the very last second.
                 </p>
 
                 <div style={{

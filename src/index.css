@@ -460,7 +460,7 @@ a {
   right: -1px;
   bottom: -1px;
   border-radius: inherit;
-  background: linear-gradient(90deg, #60a5fa, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1), #60a5fa);
+  background: linear-gradient(90deg, #4444f4, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1), #4444f4);
   background-size: 200% 100%;
   animation: panBorder 3s linear infinite;
   z-index: -2;
@@ -471,7 +471,7 @@ a {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background-color: rgba(10, 15, 30, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   /* Dark to transparent fill */
   z-index: -1;
   transition: background-color 0.3s ease;
@@ -488,7 +488,7 @@ a {
 }
 
 .btn-secondary:hover::before {
-  background: #60a5fa;
+  background: #4444f4;
   animation: none;
 }
 
