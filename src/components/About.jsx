@@ -4,8 +4,8 @@ import { Palette, Volume2, Scissors, Zap, Award, Clock, RefreshCw, Send } from '
 
 const About = () => {
   const highlights = [
-    { icon: <Clock size={20} />, title: '3-Day Delivery', text: 'Fast turnaround without compromising quality.' },
-    { icon: <RefreshCw size={20} />, title: '5-10 Revisions', text: 'Satisfaction is the priority.' },
+    { icon: <Clock size={20} />, title: 'Fast Turnaround', text: 'Quick delivery without compromising quality.' },
+    { icon: <RefreshCw size={20} />, title: 'Unlimited Revisions', text: 'Within project scope, satisfaction guaranteed.' },
     { icon: <Award size={20} />, title: 'DaVinci Master', text: 'Mastered workflow within a single powerful tool.' },
   ];
 
@@ -45,7 +45,7 @@ const About = () => {
                 </p>
 
                 <p style={{ marginBottom: '2rem' }}>
-                  I turn your raw footage into clean, engaging, and scroll-stopping videos for any platform whether it's YouTube, Instagram, or TikTok. My work isn't just about editing; it's about the <strong>psychology</strong> behind what hooks attention and keeps viewers watching until the very last second.
+                  I turn your raw footage into clean, engaging, and scroll-stopping videos for any platform, whether it is YouTube, Instagram, Facebook, or TikTok, either long form or shortform. My work isn't just about editing; it's about the <strong>psychology</strong> behind what hooks attention and keeps viewers watching until the very last second.
                 </p>
 
                 <div style={{
@@ -60,12 +60,12 @@ const About = () => {
                     <Award size={20} color="#4444f4" />
                   </div>
                   <p style={{ margin: 0 }}>
-                    I have mastered <strong>DaVinci Resolve</strong>—from precision cuts to high-level motion graphics and color grading. By staying within one professional tool, I deliver flexible, world-class results without the friction of switching software.
+                    Maybe you are surprised that I only edit in DaVinci Resolve. Can I bring you the result you want? <strong>Yes, I can.</strong> I have mastered DaVinci Resolve from cuts to high-level motion graphics, color grading, and sound design and mixing. I am flexible and effective in that software without switching between multiple tools.
                   </p>
                 </div>
 
                 <p style={{ marginBottom: '2.5rem' }}>
-                  Send me your footage and your vision—I’ll handle the rest. Expect delivery in just <strong>3 days</strong> with 5-10 revisions because your absolute satisfaction is my baseline.
+                  Now, just send me your raw footage with your expectations, and I’ll handle the rest. You will get your video delivered with <strong>fast turnaround</strong>, and I provide <strong>unlimited revisions</strong> (within scope) because your satisfaction matters the most.
                 </p>
               </div>
 

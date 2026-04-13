@@ -105,7 +105,7 @@ const CTA = () => {
               <div style={{ background: 'rgba(68, 68, 244, 0.1)', padding: '1rem', borderRadius: '1rem', color: '#4444f4' }}>
                 <Calendar size={32} />
               </div>
-              <h3 style={{ fontSize: '2rem', margin: 0, fontWeight: 700, color: '#f8fafc' }}>Schedule via Calendly</h3>
+              <h3 style={{ fontSize: '2rem', margin: 0, fontWeight: 700, color: '#f8fafc' }}>Book a Strategic Call</h3>
             </div>
 
             <p style={{ fontSize: '1.2rem', color: '#94a3b8', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '600px' }}>
@@ -113,8 +113,8 @@ const CTA = () => {
             </p>
 
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <a href="#" className="btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1.1rem', background: '#4444f4', display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
-                <span>Open Calendly</span>
+              <a href="https://calendly.com/mmhgalaxyy/30min" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1.1rem', background: '#4444f4', display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+                <span>Book My Call Now</span>
                 <ArrowRight size={20} />
               </a>
             </div>
@@ -175,7 +175,7 @@ const CTA = () => {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <span style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '-0.02em', color: '#ffffff' }}>MMH</span>
-              <span style={{ fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.3em', color: '#4444f4' }}>GALAXY</span>
+              <span style={{ fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.3em', color: '#4444f4' }}>GALAXYY</span>
             </div>
 
             <div className="flex gap-8 text-muted" style={{ fontSize: '0.95rem' }}>
@@ -185,7 +185,7 @@ const CTA = () => {
             </div>
 
             <p style={{ fontSize: '0.9rem', color: '#475569' }}>
-              &copy; {new Date().getFullYear()} MMHgalaxy. High-performance video systems.
+              &copy; {new Date().getFullYear()} MMHgalaxyy. High-performance video systems.
             </p>
           </div>
         </div>

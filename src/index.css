@@ -12,6 +12,10 @@
   --card-border: rgba(255, 255, 255, 0.05);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
