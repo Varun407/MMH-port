@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mmhgalaxyy.com/sitemap.xml
