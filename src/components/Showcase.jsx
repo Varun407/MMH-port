@@ -6,11 +6,18 @@ const Showcase = () => {
   const shortFormVideos = [
     'https://drive.google.com/file/d/1GI0IFpbeoudtB6FiGXgpmO9ilXc76vn7/preview',
     'https://drive.google.com/file/d/15Tv5_MnGrOIFMnCP3eKK444Csjlcrp0g/preview',
-    'https://drive.google.com/file/d/1lw_Zr-Q_aqNAWdmFeH5LCI_CWV9A7kJD/preview'
+    'https://drive.google.com/file/d/1lw_Zr-Q_aqNAWdmFeH5LCI_CWV9A7kJD/preview',
+    'https://drive.google.com/file/d/1YEGs8Oa2WMdtibIuB6ixLd6pR3vQuK_L/preview',
+    'https://drive.google.com/file/d/1kOwbD7bETJx1JbxbUwaW-QaZe-fN2Jny/preview',
+    'https://drive.google.com/file/d/1Ps_gPgkoPp7jt7A4ZETT1_3yzGy7Q6mC/preview',
+    'https://drive.google.com/file/d/1SaRB5jpFx_pjgq12IP3pu1dUC2yJlPV4/preview'
   ];
   const longFormVideos = [
     'https://drive.google.com/file/d/1MUWIdnU4xfdK6rx46VbLVP0s1kQaYVEy/preview',
-    'https://drive.google.com/file/d/1ln4ho7LfnEjS_O25GiXUh14i3ug0McA-/preview'
+    'https://drive.google.com/file/d/1ln4ho7LfnEjS_O25GiXUh14i3ug0McA-/preview',
+    'https://drive.google.com/file/d/16cs03xFbuBkd_8d3b5EsTg4R0Peo8ptm/preview',
+    'https://drive.google.com/file/d/1k-_UpdjEIWqE1kBaviJkQho-K41vC9eT/preview',
+    'https://drive.google.com/file/d/1R0AqJG60FUz9qGO75kMTFsFBEFM5sstn/preview'
   ];
 
   const ThumbnailPlaceholder = ({ type, url }) => {
@@ -38,6 +45,8 @@ const Showcase = () => {
             width="100%" 
             height="100%" 
             allow="autoplay; fullscreen" 
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
             style={{ border: 'none', position: 'absolute', top: 0, left: 0, transform: 'scale(1.03)' }}
             title="Video Preview"
           ></iframe>
